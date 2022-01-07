@@ -1,0 +1,15 @@
+.width {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: pink;
+}
+.content {
+    
+}
+.content .row{
+
+    height: 50px;
+    width: 500px;
+    
+    
+}
