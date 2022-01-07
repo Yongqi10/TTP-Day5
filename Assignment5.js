@@ -54,6 +54,23 @@ removeColBtn.addEventListener('click', function () {
         let row = content.children[i];
         row.removeChild(row.children[lastCol])
     }
-   
-
 });
+
+
+const givingColor = document.querySelectorAll('.box');
+const givingColorByClick =document.querySelector('#givingColorByClick');
+
+
+for(let i = 0; i < givingColor.length; i++)
+{
+    givingColor[i].addEventListener('click',function(e) {
+
+        e.target.style.backgroundColor = givingColorByClick.options[givingColorByClick.selectedIndex].value;
+    
+    });
+}
+
+
+
+
+
