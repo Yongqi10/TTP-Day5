@@ -2,7 +2,6 @@ const addRowBtn = document.querySelector('.add-row');
 const content = document.querySelector('.content');
 
 
-
 addRowBtn.addEventListener('click', function() {
     const newRow = document.createElement('div');
     newRow.setAttribute('class','row');
@@ -18,8 +17,15 @@ addRowBtn.addEventListener('click', function() {
     content.appendChild(newRow);
 });
 
-console.log(content.children) 
+const removeRowBtn = document.querySelector('.del-row');
 
+
+removeRowBtn.addEventListener('click', function () {
+    
+    let last = content.children.length - 1;
+    content.removeChild(content.children[last]);
+    
+});
 
 
 const addCol = document.querySelector('.add-col');
@@ -31,8 +37,5 @@ addCol.addEventListener('click', function () {
         const newColumn = document.createElement('div');
         newColumn.setAttribute('class','col-sm border border-dark box white');
         content.children[i].appendChild(newColumn);
-        console.log(i);
     }
-
-
 });
