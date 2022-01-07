@@ -34,12 +34,27 @@ function ChangeAllWhiteTOAnotherColor() {
 
 }
 
+function changeAllBoxColor()
+{
+    let givingColor = document.querySelectorAll('.box');
+    const changeAll = document.querySelector('#changeAll');
+    const changeAllColor = document.querySelector('.changeAllColor');
+
+    changeAllColor.addEventListener('click', function() {
+
+      for(let i = 0; i < givingColor.length; i++)
+      {
+        givingColor[i].style.backgroundColor = changeAll.options[changeAll.selectedIndex].value
+      }   
+
+    });
+}
+
 const addRowBtn = document.querySelector('.add-row');
 const content = document.querySelector('.content');
-
-
 giveAllBoxClick();
 ChangeAllWhiteTOAnotherColor();
+changeAllBoxColor();
 
 addRowBtn.addEventListener('click', function() {
 
