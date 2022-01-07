@@ -15,9 +15,10 @@ addRowBtn.addEventListener('click', function() {
         const newColumn = document.createElement('div');
         newColumn.setAttribute('class','col-sm border border-dark box white');
         newRow.appendChild(newColumn);
-        console.log(i);
     }
 
-    console.log(newRow);
     content.appendChild(newRow);
 });
+
+
+
