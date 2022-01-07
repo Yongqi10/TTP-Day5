@@ -21,7 +21,7 @@ const removeRowBtn = document.querySelector('.del-row');
 
 
 removeRowBtn.addEventListener('click', function () {
-    
+    //remove last row
     let last = content.children.length - 1;
     content.removeChild(content.children[last]);
     
@@ -38,4 +38,22 @@ addCol.addEventListener('click', function () {
         newColumn.setAttribute('class','col-sm border border-dark box white');
         content.children[i].appendChild(newColumn);
     }
+});
+
+const removeColBtn = document.querySelector('.del-col');
+
+removeColBtn.addEventListener('click', function () {
+
+    let totalRow = content.children.length;
+    //content children = row, row children col
+    //get the col for last row
+    let lastCol = content.children[totalRow - 1].children.length - 1;
+    console.log(lastCol);
+    for(let i = 0; i < totalRow;i++)
+    {
+        let row = content.children[i];
+        row.removeChild(row.children[lastCol])
+    }
+   
+
 });
