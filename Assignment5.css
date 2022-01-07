@@ -1,15 +1,18 @@
 .width {
     width: 1200px;
     margin: 0 auto;
-    background-color: pink;
 }
-.content {
-    
-}
-.content .row{
 
-    height: 50px;
-    width: 500px;
-    
-    
+.content .row .box{
+    height: 100px;
+    width: 100px;
+}
+
+.allbtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn {
+    margin-left: 15px;
 }
