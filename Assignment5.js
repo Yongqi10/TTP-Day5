@@ -54,29 +54,27 @@ function mouseoverChangeColor() {
 
     let givingColor = document.querySelectorAll('.box');
     const mouseover =document.querySelector('#mouseover');
+    let flag = 0;
 
-    for(let i = 0; i < givingColor.length; i++)
-    {
-        // givingColor[i].addEventListener('mousedown',function(e) {
-
-        //      e.target.style.backgroundColor = mouseover.options[mouseover.selectedIndex].value;
-           
-        // });
-        givingColor[i].addEventListener('mouseover',function(e) {
-
-            e.target.style.backgroundColor = mouseover.options[mouseover.selectedIndex].value;
-          
-       });
-       
-
-    //    givingColor[i].addEventListener('mouseup',function(e) {
-
-    //      e.target.style.backgroundColor = mouseover.options[mouseover.selectedIndex].value;
+    function fn(e) {
+    
+        e.target.style.backgroundColor = mouseover.options[mouseover.selectedIndex].value;
       
-    //      });
+   }
 
-    }
+    content.addEventListener('mousedown', function () {
+        for(let i = 0; i < givingColor.length; i++)
+        {
+            givingColor[i].addEventListener('mouseover',fn);
+        }
+    });
 
+    content.addEventListener('mouseup',function () {
+        for(let i = 0; i < givingColor.length; i++)
+        {
+            givingColor[i].removeEventListener('mouseover',fn);
+        }
+    });
 }
 
 const addRowBtn = document.querySelector('.add-row');
