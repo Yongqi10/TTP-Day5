@@ -6,9 +6,9 @@ function giveAllBoxClick(){
     for(let i = 0; i < givingColor.length; i++)
     {
         givingColor[i].addEventListener('click',function(e) {
-    
-            e.target.style.backgroundColor = givingColorByClick.options[givingColorByClick.selectedIndex].value;
-        
+
+             e.target.style.backgroundColor = givingColorByClick.options[givingColorByClick.selectedIndex].value;
+            
         });
     }
     
@@ -50,12 +50,41 @@ function changeAllBoxColor()
     });
 }
 
+function mouseoverChangeColor() {
+
+    let givingColor = document.querySelectorAll('.box');
+    const mouseover =document.querySelector('#mouseover');
+
+    for(let i = 0; i < givingColor.length; i++)
+    {
+        // givingColor[i].addEventListener('mousedown',function(e) {
+
+        //      e.target.style.backgroundColor = mouseover.options[mouseover.selectedIndex].value;
+           
+        // });
+        givingColor[i].addEventListener('mouseover',function(e) {
+
+            e.target.style.backgroundColor = mouseover.options[mouseover.selectedIndex].value;
+          
+       });
+       
+
+    //    givingColor[i].addEventListener('mouseup',function(e) {
+
+    //      e.target.style.backgroundColor = mouseover.options[mouseover.selectedIndex].value;
+      
+    //      });
+
+    }
+
+}
+
 const addRowBtn = document.querySelector('.add-row');
 const content = document.querySelector('.content');
 giveAllBoxClick();
 ChangeAllWhiteTOAnotherColor();
 changeAllBoxColor();
-
+mouseoverChangeColor();
 addRowBtn.addEventListener('click', function() {
 
 
@@ -82,6 +111,8 @@ addRowBtn.addEventListener('click', function() {
     content.appendChild(newRow);
     giveAllBoxClick();
     ChangeAllWhiteTOAnotherColor();
+    changeAllBoxColor();
+    mouseoverChangeColor();
 });
 
 const removeRowBtn = document.querySelector('.del-row');
@@ -111,6 +142,8 @@ addCol.addEventListener('click', function () {
     }
     giveAllBoxClick();
     ChangeAllWhiteTOAnotherColor();
+    changeAllBoxColor();
+    mouseoverChangeColor();
     
 });
 
